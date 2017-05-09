@@ -3,6 +3,9 @@ Google Chrome is required to run the dashboard.
 
 ## Usage
 1. Put your roboRIO's IP in the .bat file after `--robot` (It's probably 10.##.##.1)
+
+*NOTE: For local testing, use `roboRIO-####-FRC.local`*
+
 2. Run the .bat file
 
 ## Stuff Used
