@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="dashboard.js"></script>
-    <link rel="stylesheet" href="main.css" type="text/css">
-  <script src="/networktables/networktables.js"></script></head>
+    <script src="tabledecoder.js"></script>
+	<script src="dashboard.js"></script>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/fonts.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+  	<script src="/networktables/networktables.js"></script></head>
   <body>
     
-    
-    
+    <div class="left">
+    	<div class="camerafeed">
+    	<!--<img src="testimg.jpg" class="cameraimage" draggable="false">-->
+		</div>
+		<div class="footer">
+			<article>
+			<div>
+				<h2>Connection</h2>
+				<table class="status"><tbody>
+					<tr><td><i id="socketConnection" class="fa fa-lg fa-times"></i></td><td><p>Socket</p></td></tr>
+					<tr><td><i id="robotConnection" class="fa fa-lg fa-times"></i></td><td><p>Robot</p></td></tr>
+					<tr><td><i id="fmsConnection" class="fa fa-lg fa-times"></i></td><td><p>FMS</p></td></tr>
+				</tbody></table>
+			</div>
+			
+			<div class="vdivider"></div>
+			
+			<div>
+				<h2>Battery</h2>
+				<h1>12.71<span class="unit">V</span></h1>
+				<h2>RIO CPU</h2>
+				<h1>23<span class="unit">%</span></h1>
+			</div>
+			
+			<div class="vdivider"></div>
+			
+			</article>
+		</div>
+	</div>
+   	<div class="right">
+		<div class="banner">
+			
+		</div>
+		<div class="content">
+			<article>
+				<p>stuff</p>
+			</article>
+		</div>
+	</div>
   </body>
 </html>

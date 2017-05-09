@@ -1,0 +1,163 @@
+* {
+  margin: 0px;
+  font-family: BebasNeue;
+  height: 100%;
+  user-select: none;
+}
+
+/*
+TEXT STYLING
+*/
+
+p {
+	font-family: BebasNeue;
+	color: #eeeeee;
+	height: auto;
+}
+/*
+LAYOUT
+*/
+.left {
+  	width: 60%;
+  	height: 100%;
+  	display: block;
+ 	position: fixed;
+	left: 0px;
+	top: 0px;
+	float: left;
+}
+.right {
+  	width: 40%;
+  	height: 100%;
+  	display: block;
+ 	position: fixed;
+	right: 0px;
+	top: 0px;
+	float: right;
+}
+.banner {
+	height: 100px;
+	width: 40%;
+	background: #ff0000;
+	position: fixed;
+	right: 0px;
+	top: 0px;
+}
+.content {
+	height: calc(100% - 100px);
+	width: 40%;
+	background-color: dimgray;
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+}
+.footer {
+    height: 150px;
+	width: 60%;
+	position: fixed;
+	bottom: 0px;
+	display: block;
+	background: #111111
+}
+
+.camerafeed {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 60%;
+	height: calc(100% - 150px);
+	background: #9C9C9C;
+	display: block;
+}
+
+.cameraimage {
+	display: block;
+	margin: 0 auto;
+	object-fit: cover;
+	width: 100%;
+	max-height: 100%;
+}
+
+article {
+	width: calc(100% - 16px);
+	height: calc(100% - 16px);
+	margin: 8px;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+
+/*
+SCROLLBARS
+*/
+::-webkit-scrollbar {
+	width: 12px;
+}
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 8px 2px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb {
+	-webkit-box-shadow: inset 0 0 8px 2px rgba(0,0,0,0.3);
+		border-radius: 6px;
+}
+
+
+i {
+	color: #eeeeee;
+}
+
+.status{
+	height: auto;
+	float: left;
+	display: inline;
+}
+
+
+
+tr {
+	height: 33%;
+}
+
+.status td{
+	height: 33%;
+	min-width: 22px;
+}
+
+.status p {
+	font-size: 24px;
+}
+
+.vdivider {
+	background-color: #eeeeee;
+	position: relative fixed;
+	width: 1px;
+	margin: 8px;
+	height: calc(100% - 16px);
+	float: left;
+}
+h2 {
+	font-family: BebasNeue;
+	color: #dddddd;
+	font-size: 16px;
+	height: auto;
+	margin-top: 2px;
+}
+
+article>div {
+	float: left;
+}
+
+h1 {
+	height: auto;
+	color: #eeeeee;
+	font-family: BebasNeue;
+	font-size: 32px
+}
+
+.unit {
+	font-size: 24px;
+	color: #cccccc;
+}
+
+td>i {
+	text-align: center;
+}
