@@ -1,21 +1,21 @@
 var updatingValues = ["pdp_voltage"];
 var updatingDefaults = [];
 
-var socketConn = false;
+var robotConn = false;
 
 window.onload = function(){
   for(var i = 0; i < updatingValues.length; i++){
     updatingDefaults.push(document.getElementById(updatingValues[i]).innerHTML);
-    NetworkTables.addKeyListener("dashboard/roboRIO/"+updatingValues[i], function(key, value, isNew){
-      document.getElementById(key).innerHTML = value;
-    }, true);
   }
   console.log(updatingDefaults);
   
+   NetworkTables.addGlobalListener(function(key, value, isNew){
+      updateValues();
+    }, true);
+  
 NetworkTables.addWsConnectionListener(function(connected){
   
-  socketConn = connected;
-  checkConnection();
+  
   
 	if(connected){
 		document.getElementById('socketConnection').className = 'fa fa-lg fa-check';
@@ -26,6 +26,9 @@ NetworkTables.addWsConnectionListener(function(connected){
 }, true);
   
 NetworkTables.addRobotConnectionListener(function(connected){
+  robotConn = connected;
+  checkConnection();
+  
 	if(connected){
 		document.getElementById('robotConnection').className = 'fa fa-lg fa-check';
 	} else {
@@ -37,9 +40,14 @@ NetworkTables.addRobotConnectionListener(function(connected){
   
 }
 
+function updateValues(){
+   for(var i = 0; i < updatingValues.length; i++){
+       document.getElementById(updatingValues[i]).innerHTML = readKey(updatingValues[i]);
+     }
+}
 
 function checkConnection(){
-  if(socketConn == false){
+  if(robotConn == false){
       for(var i = 0; i < updatingValues.length; i++){
         document.getElementById(updatingValues[i]).innerHTML = updatingDefaults[i];
       }
