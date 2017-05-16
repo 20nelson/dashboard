@@ -31,15 +31,17 @@ NetworkTables.addRobotConnectionListener(function(connected){
   
 	if(connected){
 		document.getElementById('robotConnection').className = 'fa fa-lg fa-check';
+		
 	} else {
 		document.getElementById('robotConnection').className = 'fa fa-lg fa-times';
 		document.getElementById('fmsConnection').className = 'fa fa-lg fa-times';
 		// reset all values
 	}
-}, true);
-  
+}, true); 
 }
-
+window.setInterval(function(){
+document.getElementById('cameraimage').src = NetworkTables.getValue("/CameraPublisher/USB Camera 0/streams")[0].replace("mjpg:","");
+}, 100);
 function updateValues(){
    for(var i = 0; i < updatingValues.length; i++){
        document.getElementById(updatingValues[i]).innerHTML = readKey(updatingValues[i]);
